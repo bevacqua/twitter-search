@@ -16,4 +16,4 @@ tq ponyfoo.com
 
 mit
 
-[screenshot]: https://raw.github.com/bevacqua/twitter-search/master/resources/example.png
+[screenshot]: https://raw.github.com/bevacqua/twitter-search/master/example.png
