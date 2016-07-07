@@ -1,0 +1,24 @@
+{
+  "name": "twitter-search",
+  "version": "1.0.0",
+  "description": "a cli to search on twitter.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bevacqua/twitter-search.git"
+  },
+  "author": "Nicolas Bevacqua <nicolasbevacqua@gmail.com> (https://ponyfoo.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bevacqua/twitter-search/issues"
+  },
+  "bin": {
+    "tq": "cli"
+  },
+  "homepage": "https://github.com/bevacqua/twitter-search#readme",
+  "dependencies": {
+    "cli-table": "0.3.1",
+    "moment": "2.14.1",
+    "twitter": "1.3.0"
+  }
+}

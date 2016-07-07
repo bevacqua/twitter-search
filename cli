@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+const moment = require('moment');
+const Table = require('cli-table');
+const Twitter = require('twitter');
+const client = new Twitter({
+  consumer_key: 'Z4krMyaiKRaPdnzZpll7AhBAI',
+  consumer_secret: 'pyThIyLFtDtYxaiFAX8KKViYv3sPiweUxwWkpnpLYXVnKomIOB',
+  access_token_key: '329661096-ZGq5WNLg2XtPd8qUSP0JjO4v2P3kWnWN0JGtg2ac',
+  access_token_secret: '9NLZLO0RKnNCA4qoSo5yY8ZGyybQTBmO7GtkZBoUNCOnD'
+});
+const q = process.argv.slice(2).join(' ');
+const params = { q };
+const twitterdate = 'ddd MMM DD HH:mm:ss ZZ YYYY';
+
+const table = new Table({
+  colWidths: [150]
+});
+
+client.get('search/tweets', params, got);
+
+function got (err, tweets, response){
+  if (err) {
+    console.error(err);
+    process.exit();
+    return;
+  }
+
+  tweets
+    .statuses
+    .sort((a, b) => date(a).isAfter(date(b)) ? 1 : -1)
+    .forEach(tweet => {
+      const footer = [
+        `@${tweet.user.screen_name}`,
+        date(tweet).fromNow(),
+        `(https://twitter.com/${tweet.user.screen_name}/status/${tweet.id})`
+      ];
+      table.push([`${tweet.text}
+
+    — ${footer.join(' ')}`]);
+    });
+
+  console.log(table.toString());
+}
+
+function date (tweet) {
+  return moment(tweet.created_at, twitterdate);
+}
