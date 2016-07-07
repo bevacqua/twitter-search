@@ -6,8 +6,8 @@ const Twitter = require('twitter');
 const client = new Twitter({
   consumer_key: 'Z4krMyaiKRaPdnzZpll7AhBAI',
   consumer_secret: 'pyThIyLFtDtYxaiFAX8KKViYv3sPiweUxwWkpnpLYXVnKomIOB',
-  access_token_key: '329661096-ZGq5WNLg2XtPd8qUSP0JjO4v2P3kWnWN0JGtg2ac',
-  access_token_secret: '9NLZLO0RKnNCA4qoSo5yY8ZGyybQTBmO7GtkZBoUNCOnD'
+  access_token_key: '329661096-TFAICyoOzhqU1qAYx9o5CIB6xb7IXjDbx0nEoiJs',
+  access_token_secret: 'Iw15MnnQJf4UGs3jWv7k0moW4f6EeQR7r8SqflFTF8BxI'
 });
 const q = process.argv.slice(2).join(' ');
 const params = { q };
