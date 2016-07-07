@@ -33,7 +33,7 @@ function got (err, tweets, response){
       const footer = [
         `@${tweet.user.screen_name}`,
         date(tweet).fromNow(),
-        `(https://twitter.com/${tweet.user.screen_name}/status/${tweet.id})`
+        `(https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str})`
       ];
       table.push([`${tweet.text}
 
